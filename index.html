@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Zipcode Lookup</title>
+    <link rel="icon" href="icons8-zip-codes-48.png" />
+    <style>
+      .airplane-container {
+        position: absolute;
+        top: 5%;
+        left: -100px;
+        animation: fly-right 10s linear infinite;
+      }
+
+      img {
+        width: 100px;
+        height: auto;
+      }
+
+      @keyframes fly-right {
+        0% {
+          left: -100px;
+        }
+        100% {
+          left: 100%;
+        }
+      }
+
+      body {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        background-image: url(wepik-export-202309190600338SZW.png);
+        background-repeat: no-repeat;
+        background-size: cover;
+        margin-top: 8rem;
+      }
+
+      .submit-btn {
+        background: #dee2e6;
+        border: none;
+        border-radius: 5px;
+        padding: 10px 15px;
+        margin-top: 25px;
+        cursor: pointer;
+      }
+      .reset-btn {
+        background: #dee2e6;
+        border: none;
+        transform: translate(140%);
+        border-radius: 5px;
+        padding: 10px 15px;
+        cursor: pointer;
+      }
+      input {
+        border: none;
+        background: #dee2e6;
+        padding: 8px;
+        border-radius: 5px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="airplane-container">
+      <img src="icons8-aircraft-94.png" alt="Airplane" />
+    </div>
+    <h1>Zipcode Lookup</h1>
+    <form id="zipcodeInput">
+      <label for="zipcode">Enter US Zipcode: </label>
+      <input
+        type="text"
+        id="zipcode"
+        name="zipcode"
+        placeholder="xxxxx"
+        required
+      />
+      <div class="btns">
+        <button type="submit" class="submit-btn">Submit👍</button>
+        <button type="button" class="reset-btn" id="resetButton">
+          Reset🔁
+        </button>
+      </div>
+    </form>
+    <p id="notification" style="color: red"></p>
+    <div id="result" style="display: none">
+      <p><strong>City:</strong> <span id="city"></span></p>
+      <p><strong>State:</strong> <span id="state"></span></p>
+      <p><strong>Country:</strong> <span id="country"></span></p>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
